@@ -6,7 +6,7 @@ int factorial(int n) {
   if (n == 0) {
     return 1;
   }
-  int result = 0;
+  int result = 1;
   for (int i = 1; i <= n; i++) {
     result *= i;
   }
@@ -25,7 +25,7 @@ double exponential(double x) {
   double powx = 1.0;
   // 10 iterations should be enough since 10! is very large; too much beyond
   // that and dividing by a very large value will give unexpected results.
-  for (int degree = 0; degree < 3; degree++) {
+  for (int degree = 0; degree < 10; degree++) {
     accum += powx / (double) factorial(degree);
     powx *= x;
   }
