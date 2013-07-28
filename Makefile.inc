@@ -3,8 +3,6 @@ VENDOR := ../vendor
 CFLAGS := -I${VENDOR} -g -std=c99 -Wall -Werror
 TEST_BINARY = ${PROBLEM}_tests
 
-all: ${TEST_BINARY}
-
 test: ${TEST_BINARY}
 	./${TEST_BINARY}
 
