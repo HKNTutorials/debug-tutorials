@@ -1,0 +1,8 @@
+# object files
+*.o
+# Mac OS X debug symbols
+*.dSYM
+# auto-generated main files with all tests
+*_tests.c
+# test binaries
+*_tests
