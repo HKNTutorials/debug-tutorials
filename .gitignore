@@ -6,3 +6,7 @@
 *_tests.c
 # test binaries
 *_tests
+# downloaded from Makefile
+vendor/remark.min.js
+# auto-generated from template
+slides/presentation.html
