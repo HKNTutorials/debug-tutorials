@@ -3,9 +3,9 @@ HKN debugging tutorials
 # Workflows
 
 ## problem
-- write problem (how?)
-- write test to check solution (how?)
-- write solution to tutorial (how?)
+- write problem
+- write some starter tests in CuTest
+- write solution and commit to solutions branch
 - write slides explaining this problem
 - write slides explaining solution
 
