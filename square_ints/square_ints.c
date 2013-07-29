@@ -20,7 +20,7 @@ void fillArray(int *array, int startNum, int len) {
 // Square each element of array assuming it is of size len
 void squareArray(int *array, int len) {
   for (int i = 0; i < len; i++) {
-    array[i] = array[i]*array[i];
+    array[i] = array[0]*array[i];
   }
 }
 
