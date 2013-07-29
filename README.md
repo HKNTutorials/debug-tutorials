@@ -26,8 +26,8 @@ HKN debugging tutorials
     auto-runner)
   - will want to hide some complexity of compiling slides from users (to
     prevent random dependencies from leaking in)
-- use `gtest`, with some hooks for C: link against our C++ wrapper and the
-  `gtest` library, producing either a `gtest` or customized test binary
+- use [CuTest](http://cutest.sourceforge.net/) (C unit testing framework) to
+  write tests
 - maintain a `solutions` branch with all passing tests; manually keep master
   merged into `solutions`
 
