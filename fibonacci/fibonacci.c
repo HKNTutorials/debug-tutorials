@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-#include "test-lib.h"
+#include "testlib.h"
 
 // define fibonacci number f_0 = 0, f_1 = 1, f_n = f_{n-1} + f_{n-2}
 
