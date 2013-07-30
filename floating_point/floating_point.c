@@ -3,7 +3,7 @@
 
 float sumRange(float start, float end, float increment) {
   float sum = 0.0;
-  for (float f = start; f != end; f += increment) {
+  for (float f = start; f < end; f += increment) {
     sum += f;
   }
   return sum;
