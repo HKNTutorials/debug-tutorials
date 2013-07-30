@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "CuTest.h"
+#include "testlib.h"
 
 // Compute the factorial of n, where n must be >= 0.
 int factorial(int n) {
@@ -33,9 +33,15 @@ double exponential(double x) {
 }
 
 void TestFactorial(CuTest* tc) {
-  CuAssertIntEquals(tc, 1, factorial(0));
-  CuAssertIntEquals(tc, 1, factorial(1));
-  CuAssertIntEquals(tc, 24, factorial(4));
+  int expected[] = {1,1,2,6,24,120};
+  int actual[arraylen(expected)];
+  int len = arraylen(expected);
+  for (int i = 0; i < len; i++) {
+    actual[i] = factorial(i);
+  }
+  CuAssertStrEquals(tc,
+                       IntArrayToString(expected, len),
+                       IntArrayToString(actual, len));
 }
 
 // As noted above, exponential() is inaccurate for large values, so make sure

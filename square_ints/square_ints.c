@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "CuTest.h"
+#include "testlib.h"
 
 #define SIZE (50)
 
@@ -59,5 +59,5 @@ void TestSquareArray(CuTest *tc) {
   // These assertions have correct expected values
   CuAssertIntEquals(tc, 1000*1000, array[0]);
   CuAssertIntEquals(tc, 1026*1026, array[26]);
-  CuAssertIntEquals(tc, 1049 * 1049, array[49]);
+  CuAssertIntEquals(tc, 1049*1049, array[49]);
 }
