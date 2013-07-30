@@ -7,6 +7,6 @@
 # test binaries
 *_tests
 # downloaded from Makefile
-vendor/remark.min.js
-# auto-generated from template
-slides/presentation.html
+assets/remark.min.js
+# compiled presentations
+gdb-intro.html
