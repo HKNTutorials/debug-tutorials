@@ -1,0 +1,22 @@
+include ${LEVEL}/Makefile.inc
+all: test
+
+test: ${TEST_BINARY}
+	${BIN}/timeout.py ./${TEST_BINARY}
+
+slides: problem.md
+
+PROBLEM_TEMPLATE := ${LEVEL}/slides/problem.template.md
+problem.md: synopsis.h extra_slides.md ${PROBLEM_TEMPLATE}
+	${BIN}/make-problem-slides.py -m ${PROBLEM_TEMPLATE} ${PROBLEM}
+
+${PROBLEM}_tests.c: ${PROBLEM}.c
+	${BIN}/make-tests.sh $< > $@
+
+${TEST_BINARY}: ${PROBLEM}_tests.c ${PROBLEM}.o ${LIB}/CuTest.o ${LIB}/testlib.o
+	${CC} ${CFLAGS} $^ -o $@
+
+clean:
+	rm -f *.o
+	rm -f ${PROBLEM}_tests.c
+	rm -f ${TEST_BINARY}

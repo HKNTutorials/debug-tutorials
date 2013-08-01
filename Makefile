@@ -1,16 +1,22 @@
-default: all
+default: assets gdb-intro.html
 LEVEL = .
 include Makefile.inc
 
-all: ${LIB}/CuTest.o ${ASSETS}/remark.min.js gdb-intro.html
+assets: ${LIB}/CuTest.o ${ASSETS}/remark.min.js
 
 ${ASSETS}/remark.min.js:
 	curl -o $@ http://gnab.github.io/remark/downloads/remark-0.5.3.min.js
 
-SLIDES = slides/gdb-intro.md
-SLIDES += exp/exp.md exp/exp-soln.md
-SLIDES += square_ints/square_ints.md square_ints/square_ints-soln.md
-TEMPLATE = slides/presentation.template.html
+PROBLEMS := exp square_ints floating_point
 
-gdb-intro.html: ${SLIDES} ${TEMPLATE}
+SLIDES := slides/gdb-intro.md
+PROBLEM_SLIDES := $(foreach prob,$(PROBLEMS),$(prob)/problem.md)
+SOLN_SLIDES := $(foreach prob,$(PROBLEMS),$(prob)/soln.md)
+SLIDES += $(PROBLEM_SLIDES) $(SOLN_SLIDES)
+
+$(PROBLEM_SLIDES): %/problem.md:
+	$(MAKE) -C $(dir $@) slides
+
+TEMPLATE := slides/presentation.template.html
+gdb-intro.html: slides ${SLIDES} ${TEMPLATE}
 	${BIN}/combine-slides.py -m ${TEMPLATE} -t "GDB Intro" -o $@ ${SLIDES}

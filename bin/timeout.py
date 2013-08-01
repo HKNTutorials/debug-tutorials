@@ -20,6 +20,12 @@ args = parser.parse_args()
 
 p = subprocess.Popen(args.command)
 
+def cleanup_handler(signum, frame):
+    print("Command terminated early")
+    p.kill()
+    sys.exit(127)
+
+signal.signal(signal.SIGINT, cleanup_handler)
 
 def handler(signum, frame):
     print("Command timed-out after %d seconds" % args.time)
