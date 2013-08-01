@@ -9,6 +9,11 @@ ${ASSETS}/remark.min.js:
 
 PROBLEMS := exp square_ints floating_point
 
+tests:
+	for prob in $(PROBLEMS); do \
+	  make -C $$prob test; \
+	done
+
 SLIDES := slides/gdb-intro.md
 PROBLEM_SLIDES := $(foreach prob,$(PROBLEMS),$(prob)/problem.md)
 SOLN_SLIDES := $(foreach prob,$(PROBLEMS),$(prob)/soln.md)
