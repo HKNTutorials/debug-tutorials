@@ -7,7 +7,7 @@ assets: ${LIB}/CuTest.o ${ASSETS}/remark.min.js
 ${ASSETS}/remark.min.js:
 	curl -o $@ http://gnab.github.io/remark/downloads/remark-0.5.3.min.js
 
-PROBLEMS := exp square_ints floating_point
+PROBLEMS := exp square_ints floating_point fibonacci
 
 tests:
 	for prob in $(PROBLEMS); do \
