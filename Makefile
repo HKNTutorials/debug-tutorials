@@ -11,15 +11,13 @@ PROBLEMS := exp square_ints floating_point
 
 tests:
 	for prob in $(PROBLEMS); do \
-	  make -C $$prob test; \
+	  make -C problems/$$prob test; \
 	done
 
 SLIDES := slides/gdb-intro.md
-PROBLEM_SLIDES := $(foreach prob,$(PROBLEMS),$(prob)/problem.md)
-SOLN_SLIDES := $(foreach prob,$(PROBLEMS),$(prob)/soln.md)
-SLIDES += $(PROBLEM_SLIDES) $(SOLN_SLIDES)
-
-$(PROBLEM_SLIDES): %/problem.md:
+PROBLEM_SLIDES := $(foreach prob,$(PROBLEMS),problems/$(prob)/problem.md problems/$(prob)/soln.md)
+SLIDES += $(PROBLEM_SLIDES)
+$(filter problems/%/problem.md,$(SLIDES)): problems/%/problem.md:
 	$(MAKE) -C $(dir $@) slides
 
 TEMPLATE := slides/presentation.template.html

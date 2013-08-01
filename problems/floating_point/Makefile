@@ -1,3 +1,3 @@
 PROBLEM=floating_point
-LEVEL=..
+LEVEL=../..
 include ${LEVEL}/Makefile.prob

@@ -1,3 +1,3 @@
 PROBLEM := fibonacci
-LEVEL := ..
+LEVEL := ../..
 include ${LEVEL}/Makefile.prob
