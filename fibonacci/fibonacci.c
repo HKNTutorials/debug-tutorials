@@ -161,7 +161,7 @@ void TestFibonacciRecursive(CuTest *tc) {
 }
 
 void TestFibonacciIterative(CuTest *tc) {
-  int tests[] = {0,1,2,3,4,5,10,40};
+  int tests[] = {0,1,2,3,4,5,10,12};
   int expected[arraylen(tests)];
   int actual[arraylen(expected)];
   int len = arraylen(tests);
@@ -182,7 +182,7 @@ void TestFibonacciClosedForm(CuTest *tc) {
   int len = arraylen(tests);
   for (int i = 0; i < len; i++) {
     int num = tests[i];
-    expected[i] = fibonacciRecursive(num);
+    expected[i] = fibonacciIterative(num);
     actual[i] = fibonacciClosedForm(num);
   }
   CuAssertStrEquals(tc,
