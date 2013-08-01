@@ -9,7 +9,7 @@ CFLAGS := -g -std=c99 -Wall -Werror -I${INCLUDE}
 TEST_BINARY = ${PROBLEM}_tests
 
 test: ${TEST_BINARY}
-	./${TEST_BINARY}
+	${BIN}/timeout.py ./${TEST_BINARY}
 
 ${PROBLEM}_tests.c: ${PROBLEM}.c
 	${BIN}/make-tests.sh $< > $@
