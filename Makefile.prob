@@ -20,3 +20,4 @@ clean:
 	rm -f *.o
 	rm -f ${PROBLEM}_tests.c
 	rm -f ${TEST_BINARY}
+	rm -rf *.dSYM
