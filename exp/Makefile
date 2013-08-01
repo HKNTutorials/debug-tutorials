@@ -1,3 +1,3 @@
 PROBLEM = exp
 LEVEL = ..
-include ../Makefile.inc
+include ${LEVEL}/Makefile.prob

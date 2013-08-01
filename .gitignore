@@ -10,3 +10,5 @@
 assets/remark.min.js
 # compiled presentations
 gdb-intro.html
+# created from template
+*/problem.md

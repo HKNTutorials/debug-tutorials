@@ -1,4 +1,3 @@
-layout: false
 # **Solution:** exp
 ```C
   int factorial(int n) {

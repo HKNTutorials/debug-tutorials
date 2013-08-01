@@ -1,5 +1,14 @@
 HKN debugging tutorials
 
+# Problems
+- memory-intro's [linked list
+  example](https://github.com/HKNTutorials/memory-intro/blob/master/reverselist.c)
+- Quine-McCluskey (boolean expression minimization)
+- malloc implementation
+- 391-style low-level "what does this do?"
+- simple parser (regex perhaps)
+- a pthread example (maybe)
+
 # Workflows
 
 ## problem

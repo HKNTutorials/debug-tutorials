@@ -14,7 +14,7 @@ def create_presentation(template, info, files):
 
 def main():
   import argparse
-  parser = argparse.ArgumentParser(description = "Create a presentation HTML file")
+  parser = argparse.ArgumentParser(description="Create a presentation HTML file")
   parser.add_argument("-m", "--template", default="presentation.template.html",
       help="Template filename")
   parser.add_argument("-o", "--output", default="presentation.html",
