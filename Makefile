@@ -23,3 +23,8 @@ $(filter problems/%/problem.md,$(SLIDES)): problems/%/problem.md:
 TEMPLATE := slides/presentation.template.html
 gdb-intro.html: slides ${SLIDES} ${TEMPLATE}
 	${BIN}/combine-slides.py -m ${TEMPLATE} -t "GDB Intro" -o $@ ${SLIDES}
+
+clean:
+	for prob in $(PROBLEMS); do \
+	  make -C problems/$$prob clean; \
+	done
