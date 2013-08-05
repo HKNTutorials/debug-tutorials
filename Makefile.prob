@@ -7,7 +7,7 @@ test: ${TEST_BINARY}
 slides: problem.md
 
 PROBLEM_TEMPLATE := ${LEVEL}/slides/problem.template.md
-problem.md: synopsis.h extra_slides.md ${PROBLEM_TEMPLATE}
+problem.md: synopsis.h extra_slides.md soln.md ${PROBLEM_TEMPLATE}
 	${BIN}/make-problem-slides.py -m ${PROBLEM_TEMPLATE} ${PROBLEM}
 
 ${PROBLEM}_tests.c: ${PROBLEM}.c
