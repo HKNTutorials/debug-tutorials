@@ -17,3 +17,12 @@ char* IntArrayToString(int *array, int len) {
   }
   return buf;
 }
+
+char* BoolArrayToString(int *array, int len) {
+  char *buf = malloc(len);
+  int pos = 0;
+  for (int i = 0; i < len; i++) {
+    pos += sprintf(buf + pos, "%s", array[i] ? "T" : "F");
+  }
+  return buf;
+}

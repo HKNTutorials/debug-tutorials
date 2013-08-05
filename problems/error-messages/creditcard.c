@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include "testlib.h"
 
 int charToNum(char *c) {
@@ -35,9 +36,23 @@ int luhn(char *number) {
 
 // This code is correct
 void TestValid(CuTest* tc) {
-  CuAssertTrue(tc,  luhn("4111111111111111"));
-  CuAssertTrue(tc, !luhn("4111111211111111"));
-  CuAssertTrue(tc,  luhn("5500000000000004"));
-  CuAssertTrue(tc, !luhn("4123103910123940"));
-  CuAssertTrue(tc,  luhn("30000000000004"));
+  int actual[] = {
+    luhn("4111111111111111"),
+    luhn("5500000000000004"),
+    luhn("30000000000004"),
+    luhn("4111111112111111"),
+    luhn("4123103910123940"),
+  };
+  int expected[] = {
+    true,
+    true,
+    true,
+    false,
+    false,
+  };
+  int len = arraylen(actual);
+  CuAssertStrEquals(tc,
+                    BoolArrayToString(expected, len),
+                    BoolArrayToString(actual, len)
+                   );
 }
