@@ -8,4 +8,7 @@
 - The comments are all truthful, but don't trust the code.
 - Feel free to add tests!
 
-{{extra-slides}}
+{{#extra_slides}}
+---
+{{extra_slides}}
+{{/extra_slides}}
