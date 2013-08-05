@@ -1,7 +1,8 @@
+#include <string.h>
 #include <stdbool.h>
 #include "testlib.h"
 
-int charToNum(char *c) {
+int charToNum(char c) {
   return c - '0';
 }
 
@@ -11,6 +12,7 @@ int sumOfDigits(int n) {
     sum += n % 10;
     n = n / 10;
   }
+  return sum;
 }
 
 /**
@@ -19,9 +21,8 @@ int sumOfDigits(int n) {
  */
 int luhn(char *number) {
   int length = strlen(number);
-  int lastIndex = length - 1;
   int sum = 0;
-  for (int i = 0; i < length; i++); {
+  for (int i = 0; i < length; i++) {
     int index = length - 1 - i;
     int num = charToNum(number[index]);
     if (i % 2 == 1) {
@@ -31,7 +32,7 @@ int luhn(char *number) {
     }
   }
   int checksum = (sum * 9) % 10;
-  return checksum = 0;
+  return checksum == 0;
 }
 
 // This code is correct
